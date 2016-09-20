@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "Tag Analyzer Plugin",
+  "description": "This Extension will check to see if a pubgears tag was loaded on the page",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "not_found.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+      {
+        "matches": [
+          "<all_urls>"
+        ],
+        "js": ["content.js"]
+      }
+    ],
+  "permissions": ["<all_urls>"]
+}

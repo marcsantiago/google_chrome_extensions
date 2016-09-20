@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "Chain Analyzer Plugin",
+  "description": "This plug trys to determine whether or not a item goes through the chain all the to the default",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "cross.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+      {
+        "matches": [
+          "<all_urls>"
+        ],
+        "js": ["content.js"]
+      }
+    ],
+  "permissions": ["<all_urls>"]
+}
