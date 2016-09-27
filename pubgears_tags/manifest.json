@@ -6,7 +6,8 @@
   "version": "1.0",
 
   "browser_action": {
-   "default_icon": "not_found.png"
+   "default_icon": "not_found.png",
+   "default_popup": "popup.html"
   },
   "background": {
     "scripts": ["background.js"],
