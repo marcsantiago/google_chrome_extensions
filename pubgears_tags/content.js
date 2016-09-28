@@ -26,10 +26,8 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
     var m = new RegExp(pat).test(markup);
     if (m) {
       chrome.runtime.sendMessage({"newIconPath" : "found.png"});
-      // msg.innerHTML = "Item was found";
     } else {
       chrome.runtime.sendMessage({"newIconPath": "not_found.png"});
-      // msg.innerHTML = "Item was not found";
     }
     response(domInfo);
   }

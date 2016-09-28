@@ -10,7 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
       data['adsize'] = document.getElementById('adsize').value;
       chrome.tabs.sendMessage(
         tabs[0].id,
-        {from: 'popup', subject: 'DOMInfo', data:data}
+        {from: 'popup', subject: 'DOMInfo', data:data},
+        function(response) {
+          console.log('jere')
+          console.log(response)
+          document.getElementById('msg').innerHTML = response.popup_msg;
+        }
       );
     });
   }, false);
