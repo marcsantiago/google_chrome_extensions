@@ -15,5 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, false);
 }, false);
+
+
 //http://stackoverflow.com/questions/6108906/chrome-extension-message-passing-from-popup-to-content-script
 //http://stackoverflow.com/questions/20019958/chrome-extension-how-to-send-data-from-content-script-to-popup-html
