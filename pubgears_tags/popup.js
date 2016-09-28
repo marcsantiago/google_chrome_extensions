@@ -1,20 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
   var checkPageButton = document.getElementById('checkPage');
   checkPageButton.addEventListener('click', function() {
-    chrome.tabs.getSelected(null, function(tab) {
-      var markup = document.documentElement.innerHTML;
-      var slug = document.getElementById('slug');
-      var msg = document.getElementById('msg');
-      var adsize = document.getElementById('adsize');
-      var pat = "tags.pubgears.com\/" + slug + "\/[^\/]+\/" + adsize;
-      var m = new RegExp(pat).test(markup);
-      if (m) {
-        chrome.runtime.sendMessage({"newIconPath" : "found.png"});
-        msg.innerHTML = "Item was found";
-      } else {
-        chrome.runtime.sendMessage({"newIconPath": "not_found.png"});
-        msg.innerHTML = "Item was not found";
-      }
+    chrome.tabs.query({
+      active: true,
+      currentWindow: true
+    }, function (tabs) {
+      var data = {};
+      data['slug'] = document.getElementById('slug').value;
+      data['adsize'] = document.getElementById('adsize').value;
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        {from: 'popup', subject: 'DOMInfo', data:data}
+      );
     });
   }, false);
 }, false);
