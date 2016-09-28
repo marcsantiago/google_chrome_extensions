@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 2.0,
 
   "name": "Tag Analyzer Plugin",
   "description": "This Extension will check to see if a pubgears tag was loaded on the page",
