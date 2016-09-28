@@ -6,7 +6,6 @@ chrome.runtime.onMessage.addListener(
           tabId: sender.tab.id
       });
       sendResponse({
-        sender.tab.id,
          popup_msg: "The item was found!"
       });
     } else {
@@ -15,7 +14,6 @@ chrome.runtime.onMessage.addListener(
           tabId: sender.tab.id
       });
       sendResponse({
-        sender.tab.id,
          popup_msg: 'The item was not found'
       });
     }
