@@ -1,4 +1,4 @@
-// check the page first
+// check the page first and change the icon
 var markup = document.documentElement.innerHTML;
 var m = markup.indexOf("tags.pubgears.com");
 if (m > -1) {
@@ -29,6 +29,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
     } else {
       chrome.runtime.sendMessage({"newIconPath": "not_found.png"});
     }
-    response(domInfo);
   }
 });
+
+

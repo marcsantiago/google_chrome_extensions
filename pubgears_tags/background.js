@@ -5,16 +5,12 @@ chrome.runtime.onMessage.addListener(
           path: request.newIconPath,
           tabId: sender.tab.id
       });
-      sendResponse({
-         popup_msg: "The item was found!"
-      });
+      sendResponse({done: true});
     } else {
       chrome.browserAction.setIcon({
           path: request.newIconPath,
           tabId: sender.tab.id
       });
-      sendResponse({
-         popup_msg: 'The item was not found'
-      });
+      sendResponse({done: false});
     }
 });
