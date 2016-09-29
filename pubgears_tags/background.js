@@ -5,12 +5,10 @@ chrome.runtime.onMessage.addListener(
           path: request.newIconPath,
           tabId: sender.tab.id
       });
-      sendResponse({done: true});
     } else {
       chrome.browserAction.setIcon({
           path: request.newIconPath,
           tabId: sender.tab.id
       });
-      sendResponse({done: false});
     }
 });
